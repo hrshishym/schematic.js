@@ -22,7 +22,7 @@ terminal (8, 1) "Output"
 This should draw the example schematic seen at the top of this document. 
 
 ## Contributing
-Contributing to schematic.js is very easy. Right now the main focus is to create draw rutines for common electrical components. Some suggestions:
+Contributing to schematic.js is very easy. Right now the main focus is to create draw rutines for common electrical components. Some suggestions are
 
 - [ ] Batteries
 - [x] Capacitors, non-polarized
@@ -43,4 +43,10 @@ Contributing to schematic.js is very easy. Right now the main focus is to create
 - [ ] Transistors (PNP, NPN, JET, MOSFET)
 - [x] Wires
 
-Take a look at the sources code to get a feel for how the draw functions should look like.
+Take a look at the sources code to get a feel for what a draw function should look like.
+
+While devloping it is useful to run a development server. If you have PHP installed you can use
+```
+$ php -S 127.0.0.1:8080
+```
+You can then access eg. *examples/resonant.html* by going to *127.0.0.1:8080/examples/resonant.html*.
