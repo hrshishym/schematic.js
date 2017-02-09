@@ -1,0 +1,44 @@
+<html>
+<head>
+	<script type="text/javascript" src="schematic.js"></script>
+</head>
+<body>
+<canvas class="MainCanvas" width=270 height=150>
+	
+</canvas>
+</body>
+
+<script>
+function find(query) {
+	var results = document.getElementsByClassName(query);
+
+	if (results.length === 1) {
+		return results[0];
+	}
+}
+
+function pt(x, y)
+{
+	return {x: x, y: y};
+}
+
+(function () {
+	console.log("Hello");
+  var canvas = find("MainCanvas");
+	var settings =  Schematic.defaultSettings;
+  settings.context = canvas.getContext("2d");
+  settings.width = canvas.width / settings.scale;
+  settings.height = canvas.height / settings.scale;
+
+  Schematic.drawGrid(settings);
+	Schematic.drawResistor(1, 1, 5, 1, settings);
+	Schematic.drawTerminal(1, 1, "Input", settings);
+	Schematic.drawCapacitor(5, 1, 5, 4, settings);
+	Schematic.drawGround(5, 4, settings);
+	Schematic.drawWire([pt(5,1), pt(8,1)], settings);
+	Schematic.drawTerminal(8, 1, "Output", settings);
+	Schematic.drawJoint(5, 1, settings);
+})();
+</script>
+
+</html>
