@@ -1,6 +1,6 @@
 <html>
 <head>
-	<script type="text/javascript" src="schematic.js"></script>
+	<script type="text/javascript" src="../source/schematic.js"></script>
 </head>
 <body>
 <canvas class="MainCanvas" width=270 height=150>
@@ -9,22 +9,14 @@
 </body>
 
 <script>
-function find(query) {
-	var results = document.getElementsByClassName(query);
-
-	if (results.length === 1) {
-		return results[0];
-	}
-}
-
-function pt(x, y)
-{
-	return {x: x, y: y};
-}
 
 (function () {
-	console.log("Hello");
-  var canvas = find("MainCanvas");
+  function pt(x, y)
+  {
+    return {x: x, y: y};
+  }
+
+  var canvas = document.getElementsByClassName("MainCanvas")[0];
 	var settings =  Schematic.defaultSettings;
   settings.context = canvas.getContext("2d");
   settings.width = canvas.width / settings.scale;
